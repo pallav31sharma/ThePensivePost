@@ -1,0 +1,45 @@
+{% extends 'base1.html' %}
+
+{%block title%} Write Article{%endblock%}
+
+{%block content%}
+
+    <form method="post" style="margin:10px;  display: flex;
+  justify-content: center;
+  align-items: center;" action="" enctype="multipart/form-data">
+        {% csrf_token %}
+    <div class="form-outline">
+        {{form.as_p}}
+        <br>
+<!--    </div>-->
+    <!--Blog Text Area-->
+        {{form.media}}
+        <input type="submit">
+    </div>
+    </form>
+{% endblock %}
+
+<!--<!DOCTYPE html>-->
+<!--<html>-->
+<!--<head>-->
+<!--    <meta charset='utf-8'>-->
+<!--    <meta http-equiv='X-UA-Compatible' content='IE=edge'>-->
+<!--    <title>Page Title</title>-->
+<!--    <meta name='viewport' content='width=device-width, initial-scale=1'>-->
+<!--</head>-->
+
+<!--<body>-->
+
+<!--    <form method="post">-->
+<!--        {% csrf_token %}-->
+<!--    <div class="form-outline">-->
+<!--        {{form.as_p}}-->
+<!--        <br>-->
+<!--    </div>-->
+<!--    &lt;!&ndash;Blog Text Area&ndash;&gt;-->
+<!--        {{form.media}}-->
+<!--        <input type="submit">-->
+<!--    </form>-->
+
+<!--</body>-->
+<!--</html>-->

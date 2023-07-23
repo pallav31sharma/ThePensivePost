@@ -1,0 +1,50 @@
+{%extends 'base1.html' %}
+
+{%block title%} My Articles {%endblock%}
+
+{%block content%}
+
+<!--<div class="list-group" style="padding:5px;margin:5px">-->
+<!--    {% for p in posts %}-->
+
+
+<!--    <a href="/blog/{{p.url}}" class="list-group-item list-group-item-action flex-column align-items-start">-->
+<!--        <div class="d-flex w-100 justify-content-between">-->
+<!--            <h5 class="mb-1">{{p.title}}</h5>-->
+<!--        </div>-->
+<!--        <p class="mb-1">{{p.content |truncatewords:60 | safe}}</p>-->
+<!--    </a>-->
+<!--    &lt;!&ndash;    <div>&ndash;&gt;-->
+<!--    &lt;!&ndash;        <a href="/update/{{p.post_id}}" class="btn btn-primary btn-sm" style="display: inline-block;">Update</a>&ndash;&gt;-->
+<!--    &lt;!&ndash;        <a href="/delete/{{p.post_id}}" class="btn btn-danger btn-sm" style="display: inline-block;">Delete</a>&ndash;&gt;-->
+<!--    &lt;!&ndash;    </div>&ndash;&gt;-->
+<!--    <div class="d-flex justify-content">-->
+<!--        <a href="/update/{{p.post_id}}" class="btn btn-sm btn-outline-primary me-2">Update</a>-->
+<!--        <a href="/delete/{{p.post_id}}" class="btn btn-sm btn-outline-danger">Delete</a>-->
+<!--    </div>-->
+<!--    {% endfor %}-->
+<!--</div>-->
+<div class="text-center">
+  <h1>My Articles</h1>
+</div>
+<br>
+
+<div class="list-group" style="padding:5px;margin:10px">
+    {% for p in posts %}
+    <a href="/blog/{{p.url}}" style="  text-decoration: none;margin:1px;">
+        <div class="card border rounded-3 shadow-sm card-hover">
+            <div class="card-body" >
+                <h5 class="card-title">{{p.title}}</h5>
+                <p class="card-text">{{p.content |truncatewords:60 | safe}}</p>
+                <div class="d-flex justify-content">
+                    <a href="/update/{{p.post_id}}" class="btn btn-sm btn-outline-primary me-2">Update</a>
+                    <a href="/delete/{{p.post_id}}" class="btn btn-sm btn-outline-danger">Delete</a>
+                </div>
+            </div>
+        </div>
+    </a>
+
+
+    {% endfor %}
+</div>
+{% endblock %}

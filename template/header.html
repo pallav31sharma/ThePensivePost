@@ -1,0 +1,40 @@
+<header>
+    <nav class="navbar navbar-expand-md navbar-dark " style="padding:8px 8px; background:black;">
+      <a  style="color: white; font-size:30px ;font-family:Arial; text-align:center" class="navbar-brand" href="{% url 'home' %}">The Pensive Post </a>
+      <!--     <div class="navbar-nav ml-auto">
+        <a class="nav-item nav-link" href="#">About Us</a>
+      </div> -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle ml-auto " href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false" >
+              CATEGORIES
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              {% for cat in cats %}
+              <a class="dropdown-item" href="/category/{{cat.url}}">{{cat.title}}</a>
+              {% endfor %}
+
+<!--              <a class="dropdown-item" href="#">Another action</a>-->
+<!--              <div class="dropdown-divider"></div>-->
+<!--              <a class="dropdown-item" href="#">Something else here</a>-->
+            </div>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link " href="/test">WRITE BLOG</a>
+            </li>
+           <li class="nav-item">
+              <a class="nav-link " href="/myarticles">MY BLOGS</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="/logout">LOGOUT</a>
+            </li>
+        </ul >
+      </div>
+    </nav>
+  </header>
